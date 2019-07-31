@@ -1,0 +1,37 @@
+spring:
+  jackson:
+    #设置对输出参数的格式化
+    date-format: yyyy-MM-dd HH:mm:ss
+    #北京时间相对伦敦有8个小时时差所以使用GMT+8，这样才能正常显示日期
+    time-zone: GMT+8
+  mvc:
+    #设置对输入参数的格式化，这样后台的接口就可以接收Date类型
+    date-format: yyyy-MM-dd
+  #  profiles:
+  #    active: test
+  datasource:
+    url: jdbc:mysql://localhost:3306/week9?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+  thymeleaf:
+    cache: false
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+#resource:
+#  #自定义
+#  imageServer: http://images.hgz.com
+#  emailServer: http://email.hgz.com
+#设置端口号
+server:
+  port: 8080
+#logging:
+#  #配置日志文件
+#  file: D:/springbootmylog/log.log
+#  #配置日志级别
+#  level:
+#    org:
+#      springframework:
+#        web: debug
+

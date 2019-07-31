@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>hello</h2>
+<!--    给文本赋值-->
+<span th:text="2222"></span>
+<hr/>
+<!-- 条件成立-->
+<span th:if="${ad > 79}">成绩合格</span>
+<hr/>
+<!--条件不成立-->
+<span th:unless="${ad > 90}">条件不成立</span>
+<hr/>
+<!--三元运算符-->
+<span th:text="${age>18 ? '长大了':'未成年'}"></span>
+<!--遍历集合，展示-->
+<table>
+    <tr th:each="book : ${booklist}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.bookName}"></td>
+        <td th:text="${book.userId}"></td>
+    </tr>
+
+    <br/>
+
+
+</table>
+<!--格式化时间格式-->
+<input th:value="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"/>
+</body>
+</html>
